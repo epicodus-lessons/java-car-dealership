@@ -6,6 +6,6 @@ class Vehicle {
   public int mPrice;
 
   public boolean worthBuying(int maxPrice){
-    return (mPrice > maxPrice);
+    return (mPrice < maxPrice);
   }
 }
