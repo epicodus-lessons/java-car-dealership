@@ -1,4 +1,6 @@
 import java.io.Console;
+import java.util.List;
+import java.util.ArrayList;
 
 public class App {
   public static void main(String[] args) {
@@ -9,7 +11,13 @@ public class App {
     Vehicle sedan = new Vehicle(2015, "Toyota", "Camry", 50000, 30000);
     Vehicle truck = new Vehicle(1999, "Ford", "Ranger", 100000, 4000);
     Vehicle crossover = new Vehicle(1998, "Toyota", "Rav-4", 200000, 3500);
-    Vehicle[] allVehicles = {hatchback, suv, sedan, truck, crossover};
+
+    List<Vehicle> allVehicles = new ArrayList<Vehicle>();
+    allVehicles.add(hatchback);
+    allVehicles.add(suv);
+    allVehicles.add(sedan);
+    allVehicles.add(truck);
+    allVehicles.add(crossover);
 
     System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price or Add Vehicle");
     String navigationChoice = myConsole.readLine();
@@ -38,7 +46,7 @@ public class App {
             System.out.println( individualVehicle.mPrice );
           }
         }
-      } else if (navigationChoice.equals("Add Vehicle")){
+    } else if (navigationChoice.equals("Add Vehicle")){
         System.out.println("Alright, let's add a vehicle! What year was this vehicle made?");
         int userVehicleYear = Integer.parseInt(myConsole.readLine());
         System.out.println("Great! What make or brand is the vehicle?");
@@ -57,7 +65,7 @@ public class App {
         System.out.println( userVehicle.mModel );
         System.out.println( userVehicle.mMiles );
         System.out.println( userVehicle.mPrice );
-      } else {
+    } else {
         System.out.println("I'm sorry, we don't recognize your input");
       }
     }
