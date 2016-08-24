@@ -19,8 +19,11 @@ public class App {
     allVehicles.add(truck);
     allVehicles.add(crossover);
 
-    while(true){
-      System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price or Add Vehicle");
+    boolean programRunning = true;
+
+    while(programRunning){
+      System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, Add Vehicle or Exit");
+      
       String navigationChoice = myConsole.readLine();
 
       if (navigationChoice.equals("All Vehicles")){
@@ -48,27 +51,29 @@ public class App {
           }
         }
       } else if (navigationChoice.equals("Add Vehicle")){
-        System.out.println("Alright, let's add a vehicle! What year was this vehicle made?");
-        int userVehicleYear = Integer.parseInt(myConsole.readLine());
-        System.out.println("Great! What make or brand is the vehicle?");
-        String userVehicleBrand = myConsole.readLine();
-        System.out.println("Got it! What model is it?");
-        String userVehicleModel = myConsole.readLine();
-        System.out.println("And how many miles does it have on it?");
-        int userVehicleMiles = Integer.parseInt(myConsole.readLine());
-        System.out.println("Finally, what's its price?");
-        int userVehiclePrice = Integer.parseInt(myConsole.readLine());
-        Vehicle userVehicle = new Vehicle(userVehicleYear, userVehicleBrand, userVehicleModel, userVehicleMiles, userVehiclePrice);
-        allVehicles.add(userVehicle);
-        System.out.println("Alright, here's your new vehicle:");
-        System.out.println( "----------------------" );
-        System.out.println( userVehicle.mYear );
-        System.out.println( userVehicle.mBrand );
-        System.out.println( userVehicle.mModel );
-        System.out.println( userVehicle.mMiles );
-        System.out.println( userVehicle.mPrice );
+          System.out.println("Alright, let's add a vehicle! What year was this vehicle made?");
+          int userVehicleYear = Integer.parseInt(myConsole.readLine());
+          System.out.println("Great! What make or brand is the vehicle?");
+          String userVehicleBrand = myConsole.readLine();
+          System.out.println("Got it! What model is it?");
+          String userVehicleModel = myConsole.readLine();
+          System.out.println("And how many miles does it have on it?");
+          int userVehicleMiles = Integer.parseInt(myConsole.readLine());
+          System.out.println("Finally, what's its price?");
+          int userVehiclePrice = Integer.parseInt(myConsole.readLine());
+          Vehicle userVehicle = new Vehicle(userVehicleYear, userVehicleBrand, userVehicleModel, userVehicleMiles, userVehiclePrice);
+          allVehicles.add(userVehicle);
+          System.out.println("Alright, here's your new vehicle:");
+          System.out.println( "----------------------" );
+          System.out.println( userVehicle.mYear );
+          System.out.println( userVehicle.mBrand );
+          System.out.println( userVehicle.mModel );
+          System.out.println( userVehicle.mMiles );
+          System.out.println( userVehicle.mPrice );
+      } else if (navigationChoice.equals("Exit")){
+          programRunning = false;
       } else {
-        System.out.println("I'm sorry, we don't recognize your input");
+          System.out.println("I'm sorry, we don't recognize your input");
       }
     }
   }
