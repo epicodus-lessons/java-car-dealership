@@ -41,6 +41,10 @@ public class App {
 
     Vehicle[] allVehicles = {hatchback, suv, sedan, truck, crossover};
 
+    System.out.println("What is your maximum budget for a vehicle?");
+    String stringUserMaxBudget = myConsole.readLine();
+    int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
+
     System.out.println("All Vehicles:");
 
     for ( Vehicle individualVehicle : allVehicles ) {
